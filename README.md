@@ -1,10 +1,12 @@
 ===============================================================================
+
 PROJET/PURPOSE:
 
 UDACITY - DATA SCIENCE project: Write a Data Science Blog Post
 
 
 ===============================================================================
+
 TITLE:
 
 Monitoring per department of the COVID-19 situation in France (16-Dec-2022)
@@ -12,6 +14,7 @@ Rebound of contamination and hospitalization in the last month.
 
 
 ===============================================================================
+
 DESCRIPTION:
 
 Business Understanding
@@ -38,6 +41,7 @@ Business Understanding
 
 
 ===============================================================================
+
 DATA UNDERSTANDING:
 	
 Data access:
@@ -245,6 +249,7 @@ At a time, it was considered to use 'dep' (departement -string-) values as
 
 
 ===============================================================================
+
 PREPARE DATA 
 
 Data processing:
@@ -322,6 +327,7 @@ Other scikit's linear models give same results or worst, so I keep this one.
 
 
 ===============================================================================
+
 VISUALIZATION:
 
 Visualization required additional processing to get the appropriate values 
@@ -406,6 +412,7 @@ Question 5: Modelization
 
    
 ===============================================================================
+
 FINDINGS
 
 About 6% of data were removed from the initial data set due to missing values.
@@ -428,6 +435,7 @@ I wonder if some other type of models could be more suitable in this case.
  
 
 ===============================================================================
+
 VERSION:
 
 ID: 1.2.0
@@ -444,6 +452,7 @@ In comparison with previous version 1.1.0, this version 1.2.0 brings following
 
 
 ===============================================================================
+
 INSTRUCTIONS:
 
 - Create local folder as workspace for this programme;
@@ -456,13 +465,15 @@ INSTRUCTIONS:
 
 			
 ===============================================================================			
-PUBLIC RELEASE: UPDATE!
+
+PUBLIC RELEASE:
 
 You can find the published results here:
 https://medium.com/@laurent.jp.costa/rebound-of-covid-19-contamination-in-france-how-we-use-to-live-with-it-d180162048ba
 
 
 ===============================================================================
+
 ENVIRONMENT:
 
 Refer to the file requirements.txt
@@ -472,17 +483,20 @@ It may be necessary to install GTK for visualization.
 
 
 ===============================================================================
-REPOSITORY’S FILES: UPDATE!
+
+REPOSITORY’S FILES:
 
 File “README.md”
-File “COVID19_France_data.csv” – data sheet file under csv format providing
- hospital data related to COVID 19 in France.
 File "requirements.txt" - librairies required for the proper execution of 
  the programme.
-
+File “COVID19_France_data.csv” – data sheet file under csv format providing
+ hospital data related to COVID 19 in France.
+File "COVID19_France_process_data.py" - Python script to process and analyze
+ the data.
 
 
 ===============================================================================
+
 DATA SOURCE:
 
 Hospital data: 
