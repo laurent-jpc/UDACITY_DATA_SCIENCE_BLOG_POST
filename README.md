@@ -19,9 +19,9 @@ DESCRIPTION:
 
 Business Understanding
 
-- Question 1: What is the rate of the population per department which is tested
-   for COVID-19? According to the global health policy, it could allow
-   adjusting locally the communication for increasing test of people. 
+- Question 1: What is the rate of the population per department which is 
+   testedfor COVID-19? According to the global health policy, it could 
+   allow adjusting locally the communication for increasing test of people. 
    
 - Question 2: What is the level of degradation of hospitalized COVID-19 patients
    per department in the last 24h? It could help to quickly identify where to
@@ -46,8 +46,8 @@ DATA UNDERSTANDING:
 	
 Data access:
 
-Data are stored in the csv file named "COVID19_France_data.csv". It is provided
- (below the GITHUB uploading 30Mo-limit) with "," used as separator.
+Data are stored in the csv file named "COVID19_France_data.csv". It is 
+ provided (below the GITHUB uploading 30Mo-limit) with "," used as separator.
 This csv data file is read and transpose in dataframe via the python script
  provided on GITHUB.
 
@@ -109,23 +109,23 @@ Data Description:
 - Description of data - COVID-19 epidemic monitoring indicators:  
   
 	'tx_pos'   = Positivity rate (float) is the number of people tested
-			      positive (RT-PCR or antigenic assay) for the first time in
-			      last 60 days over the number of people tested (positive or
-			      negative) on a given period, without being tested positive
-			      in the last 60 days;
+	 	      positive (RT-PCR or antigenic assay) for the first time in
+		      last 60 days over the number of people tested (positive or
+		      negative) on a given period, without being tested positive
+		      in the last 60 days;
 				  
 	'tx_incid' = Incidence rate (float) is the number of people tested
-			      positive (RT-PCR or antigenic assay) for the first time in
-				  the last 60 days over the size of population; it is given
-				  for 100 000 of inhabitants;
+		      positive (RT-PCR or antigenic assay) for the first time in
+		      the last 60 days over the size of population; it is given
+		      for 100 000 of inhabitants;
 				  
 	'TO' 	   = Occupancy rate (float) is the number of hostpitalized COVID-19
-		          patients over the initial number of beds at hospital (before 
-				  increase of this number).
+		      patients over the initial number of beds at hospital (before 
+		      increase of this number).
 				  
 	'R' 	   = Virus replication rate (float) is the average number of people
-				  that can be contaminated by a infected person.
-			      R>1, epidemic is spreading. R<1, epidemic is declining.
+		      that can be contaminated by a infected person.
+		      R>1, epidemic is spreading. R<1, epidemic is declining.
 
 		  
 Analysis of the need to answer the questions:
