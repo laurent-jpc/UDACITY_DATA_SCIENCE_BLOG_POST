@@ -1,11 +1,11 @@
-===========================================================================
+============================================================================
 
 PROJET/PURPOSE:
 
 UDACITY - DATA SCIENCE project: Write a Data Science Blog Post
 
 
-===========================================================================
+============================================================================
 
 TITLE:
 
@@ -13,23 +13,23 @@ Monitoring per department of the COVID-19 situation in France (16-Dec-2022)
 Rebound of contamination and hospitalization in the last month.
 
 
-===========================================================================
+============================================================================
 
 DESCRIPTION:
 
 Business Understanding
 
-- Question 1: What is the rate of the population per department which is 
-   testedfor COVID-19? According to the global health policy, it could 
+- Question 1: What is the rate of the population per department which is
+   tested for COVID-19? According to the global health policy, it could 
    allow adjusting locally the communication for increasing test of people. 
    
-- Question 2: What is the level of degradation of hospitalized COVID-19 patients
-   per department in the last 24h? It could help to quickly identify where to
-   reinforce resources for treating patients in specific department when needed
-   and increase probability to save lifes with limited means.
-   
-- Question 3: What is the trend of admission/discharge at the hospitals? 
+- Question 2: What is the trend of admission/discharge at the hospitals? 
    It would give a trend of hospitals occupancy per department.
+   
+- Question 3: What is the level of degradation of hospitalized COVID-19 
+   patients per department in the last 24h? It could help to quickly identify 
+   where to reinforce resources for treating patients in specific department 
+   when needed and increase probability to save lifes with limited means.
    
 - Question 4: What is the evolution of the patients in intensive care and 
   dead in my department in the last days or weeks?   
@@ -40,7 +40,7 @@ Business Understanding
    and increase communication related to safety precaution.
 
 
-===========================================================================
+============================================================================
 
 DATA UNDERSTANDING:
 	
@@ -81,9 +81,8 @@ Data Description:
 				     resuscitation unit in the last 24h;
 					 
 	'rad'          = cumulative number (int) of patients who where
-					  hospitalized for COVID-19 but back
-					  to home due to improvement of their
-					  health;
+					  hospitalized for COVID-19 but back to home due to 
+					  improvement of their health;
 					  
 	'incid_rad'    = number (float) of the patients back to home in the last
 					  24h;
@@ -101,7 +100,8 @@ Data Description:
   
 - Description of data - tests:  
   
-	'pos'      = number (float) of people declared positive (D-3 date of test);
+	'pos'      = number (float) of people declared positive (D-3 date of 
+	             test);
 	'pos_7j'   = number (float) of people declared positive on a week
 				  (D-3 data of test);
 	'cv_dose1' = undefined (float).
@@ -109,23 +109,23 @@ Data Description:
 - Description of data - COVID-19 epidemic monitoring indicators:  
   
 	'tx_pos'   = Positivity rate (float) is the number of people tested
-	 	      positive (RT-PCR or antigenic assay) for the first time in
-		      last 60 days over the number of people tested (positive or
-		      negative) on a given period, without being tested positive
-		      in the last 60 days;
+			      positive (RT-PCR or antigenic assay) for the first time in
+			      the last 60 days over the number of people tested (positive
+			      or negative) on a given period, without being tested 
+			      positive in the last 60 days;
 				  
 	'tx_incid' = Incidence rate (float) is the number of people tested
-		      positive (RT-PCR or antigenic assay) for the first time in
-		      the last 60 days over the size of population; it is given
-		      for 100 000 of inhabitants;
+			      positive (RT-PCR or antigenic assay) for the first time in
+				  the last 60 days over the size of population; it is given
+				  for 100 000 of inhabitants;
 				  
 	'TO' 	   = Occupancy rate (float) is the number of hostpitalized COVID-19
-		      patients over the initial number of beds at hospital (before 
-		      increase of this number).
+		          patients over the initial number of beds at hospital (before 
+				  increase of this number).
 				  
 	'R' 	   = Virus replication rate (float) is the average number of people
-		      that can be contaminated by a infected person.
-		      R>1, epidemic is spreading. R<1, epidemic is declining.
+				  that can be contaminated by a infected person.
+			      R>1, epidemic is spreading. R<1, epidemic is declining.
 
 		  
 Analysis of the need to answer the questions:
@@ -135,27 +135,27 @@ According to Question 1, I would propose to compute the number of people tested
  for 100 000 inhabitants. So, to get current rate 'nb_test / pop (100 000 hab)',
  I will need last 'tx_incid' and 'tx_pos' of every department.
 
-According to Question 2, I would propose to monitor in the last 24h the
+According to Question 2, I would propose to monitor the trend of hospitals
+ occupancy per department. Thus I propose to monitor the rate of Input/Output 
+ of patients at the hospital in the last 24h as adding new people hospitalized
+ minus new people back to home and new  over the number of patients at the
+ hospital: ('incid_hosp' - 'incid_rad' - 'incid_dchosp') / ('hosp' + 'rea')  
+
+According to Question 3, I would propose to monitor in the last 24h the
  degradation of health of hospitalized people and people in intensive care unit.
  Thus I propose to monitor the rate "nb of people admitted in intensive care
  over nb of people hospitalized" ('incid_rea' / 'incid_hosp' = 'tx_rea') and
  "nb of decease over nb of people admitted in intensive car" ('incid_dchosp' /
  'incid_hosp' = 'tx_dchsop') per department.
 
-According to Question 3, I would propose to monitor the trend of hospitals
- occupancy per department. Thus I propose to monitor the rate of Input/Output 
- of patients at the hospital in the last 24h as adding new people hospitalized
- minus new people back to home and new  over the number of patients at the
- hospital: ('incid_hosp' - 'incid_rad' - 'incid_dchosp') / ('hosp' + 'rea')  
-
 According to Question 4, I would propose to plot the evolution of the
  patients in intensive care and dead in my department along the time in the
  six last months?    
  
-According to Question 5, I would propose to build a prediction model would give 
- the number of people would be declared positive to the Covid-19 test in the
- upcoming week per department according to the current sitation. Model will use
- 'pos_7j' as target according to information information of the day of report.
+According to Question 5, I would propose to build a prediction model would 
+ give the number of people would be declared positive to the Covid-19 test in
+ the upcoming week per department according to the current sitation. Model will
+ use 'pos_7j' as target according to information information of the day of report.
 
  
 Data processing:
@@ -173,8 +173,8 @@ Observations reported below have been extablished during preparation of the
 
 - Irrelevant and outliers per columns:
 
-	> Names of the french departments and regions can be removed after creating
-	  a dictionary to find the name from the number for further use.
+	> Names of the french departments and regions can be removed after 
+	  creating a dictionary to find the name from the number for further use.
 	  
 	> Undefined parameters 'reg_rea', 'reg_incid_rea' and 'cv_dose1' can be
        removed because useless without a description;
@@ -209,12 +209,12 @@ Observations reported below have been extablished during preparation of the
 	
 	> 'pos_7j' contains 5.9% of nan
 	
-	> 'cv_dose1' contains 99.9% of nan; we gonna remove this column since too
-       many values are missing.
+	> 'cv_dose1' contains 99.9% of nan; we gonna remove this column since
+       too many values are missing.
 	   
   Finally, following columns can be removed: 'reg_rea', 'reg_incid_rea',
-   'cv_dose1' and 'R'. Parameters 'lib_dep' and 'lib_reg' can be remove only
-   after creation of the dedicated dictionary.
+   'cv_dose1' and 'R'. Parameters 'lib_dep' and 'lib_reg' can be remove
+   only after creation of the dedicated dictionary.
 
    
 - Irrelevant and outliers per row:
@@ -223,22 +223,22 @@ Observations reported below have been extablished during preparation of the
 	  almost-nan rows without loosing too much data.
 	  
 	> Globally, we see that on remaining columns, we would loose at maximum
-	  5.9% of data if we remove all rows with at least a nan. I consider this
-	  is acceptable. Actually, we really loose 5.9% ofd rows.
+	  5.9% of data if we remove all rows with at least a nan. I consider
+	  this is acceptable. Actually, we really loose 5.9% ofd rows.
 
 	  
 - Enforce format to data in object format:
 	> 'date' in str ; format is YYYY-MM-DD
-	> 'dep' in str ; notably due to presence of department number '2A' and '2B'
-	  and because the visualization function use string format of normalized
-	  department number as given here.
+	> 'dep' in str ; notably due to presence of department number '2A' and 
+	  '2B' and because the visualization function use string format of 
+	  normalized department number as given here.
 	> 'lib_dep' in str (before creating the dictionary)
 	> 'lib_reg' in str (before creating the dictionary)
-  This should be done while reading the csv file because otherwise, we got an 
-   warning Low memory message. Add "dtype={"date": str, "dep": str, 'lib_dep':
-   str, 'lib_reg': str}" cancels the warning.
-    > Although initially it seemed to be not needed to convert 'reg' to 'str',
-	  build of the dictionary reveals it is; so it has to be done!
+  This should be done while reading the csv file because otherwise, we got
+   an warning Low memory message. Add "dtype={"date": str, "dep": str, 
+   'lib_dep': str, 'lib_reg': str}" cancels the warning.
+    > Although initially it seemed to be not needed to convert 'reg' to 
+	  'str', build of the dictionary reveals it is; so it has to be done!
  
 There is no dummy parameters.
 At a time, it was considered to use 'dep' (departement -string-) values as
@@ -249,7 +249,7 @@ At a time, it was considered to use 'dep' (departement -string-) values as
  'Modelization'), I decided to not use these dummies.
 
 
-===========================================================================
+============================================================================
 
 PREPARE DATA 
 
@@ -262,7 +262,20 @@ According to Question 1, I compute a rate 'nb_test / pop (100 000 hab)',
  for 100 000 inhabitants. I call the result column 'tx_test'.
 
  
-According to Question 2, I compute both rates to monitor in the last 24h 
+According to Question 2, I compute the Rate of Patient-Input/Output at
+ hospital as
+ ('incid_hosp' - 'incid_rad' - 'incid_dchosp') / ('hosp' + 'rea') 
+
+When necessary, I replace the sum of 'hosp' + 'rea' (denominator) by 1 when
+ it equals to zero to be able to show the change. Actually, there is not a
+ big difference in this context between zero people.
+ 
+For this both operations, it helps to replace nan by 0 and inf values by 
+the maximum of the numeric values to provide a reasonable finite a high
+value instead of infinite.
+
+
+According to Question 3, I compute both rates to monitor in the last 24h 
   the degradation of health of hospitalized people and people in intensive
   care unit as follows:
 
@@ -272,19 +285,6 @@ According to Question 2, I compute both rates to monitor in the last 24h
 - Rate of deceases at hospital over people admitted in intensive care:
    'incid_dchosp' / 'incid_rea' = 'tx_dchsop' 
 
-For this both operations, it helps to replace nan by 0 and inf values by 
-the maximum of the numeric values to provide a reasonable finite a high
-value instead of infinite.
- 
- 
-According to Question 3, I compute the Rate of Patient-Input/Output at
- hospital as
- ('incid_hosp' - 'incid_rad' - 'incid_dchosp') / ('hosp' + 'rea') 
-
-When necessary, I replace the sum of 'hosp' + 'rea' (denominator) by 1 when
- it equals to zero to be able to show the change. Actually, there is not a
- big difference in this context between zero people.
- 
 For this both operations, it helps to replace nan by 0 and inf values by 
 the maximum of the numeric values to provide a reasonable finite a high
 value instead of infinite.
@@ -304,8 +304,8 @@ According to Question 5, I built a prediction model to give 'pos_7j' as target
  modelization.
 
 Basically, I choose a linear model since the dataframe contains mostly figures.
- It implies that data in string format must be used: categories 'date' and 'dep'
- are removed from the model-dataframe .
+ It implies that data in string format must be used: categories 'date' and
+ 'dep' are removed from the model-dataframe .
  
 This model is fitted with 70% ( train) of the dataset and tested with 30%
  (test). Since the model is based on a linear regression, I decided to use
@@ -327,7 +327,7 @@ Other scikit's linear models give same results or worst, so I keep this one.
  So my model has a rather satisfactory score.
 
 
-===========================================================================
+============================================================================
 
 VISUALIZATION:
 
@@ -341,8 +341,8 @@ Concerning Question 1, 2 and 3, visualization is based on the display of
  results on a map of France, splited by department. Every department as a
  color according to the related value.
 
-Concerning Question 4, visualization consists in a plot of two curves, values
- of two parameters along the time.
+Concerning Question 4, visualization consists in a plot of two curves, 
+ values of two parameters along the time.
  
 Concerning Question 5, visualization consists in display of score and 
  coefficients of the model.
@@ -353,15 +353,27 @@ Explain the results:
 
 Question 1:
 
-	The graph "COVID-19 test rate for 100 000 inhabitants in the last 60 days
-     (per department)" shows a map of France with level of color consistent
-     with the level of the rate per department at the date of 16-Dec-2022.
+	The graph "COVID-19 test rate for 100 000 inhabitants in the last 60
+     days (per department)" shows a map of France with level of color 
+     consistent with the level of the rate per department at the date of
+	 16-Dec-2022.
 	This map shows that COVID-19 testing behaviour among people is rather 
 	 homogeneous but low in mainland France while is 2 or 3 times more on 
 	 islands in Guyane, Réunion and Mayotte.
 
-	 
+
 Question 2:
+
+	The graph "Flow of admission/discharge of patients at hospital in the 
+	 last 24h (per department)" shows a map of France with level of color 
+	 consistent with the level of the rate per department at the date of 
+	 16-Dec-2022.
+	Although some departments see the number of patients at hospitals 
+	decreasing, the majority of departments slightly increased their number 
+	of patients these last 24h.
+
+
+Question 3:
 
 	The graph "Rate of new people in intensive care (per department)" shows 
 	 a map of France with level of color consistent with the level of the rate
@@ -377,27 +389,18 @@ Question 2:
      low except in some departments of the South-west, North-East and in
 	 Guyane with rates between 1.5 and 3 times higher than elsewhere.
 
-Question 3:
-
-	The graph "Flow of admission/discharge of patients at hospital in the last 
-	 24h (per department)" shows a map of France with level of color consistent
-	 with the level of the rate per department at the date of 16-Dec-2022.
-	Although some departments see the number of patients at hospitals decreasing,
-	the majority of departments slightly increased their number of patients these
-	last 24h.
-
-	
+	 
 Question 4:
 
-	The graph "Evolution in time of the hospital occupancy in the department of
-     Haute-Garonne" shows a plot of two lines: one for the number of 
+	The graph "Evolution in time of the hospital occupancy in the department
+     of Haute-Garonne" shows a plot of two lines: one for the number of 
 	 hospitalized people, a second for the number of people in intensive care.
-	In my department of Haute-Garonne, the graph shows a continuous increase of
-     hospitalization since beginning of November: the level was multiplied by
- 	 1.5 in a month.
-	In parallel, the number of deceases at the hospital remains increased in the 
-	 same period with a level multiplied by 3 in a month, reaching at last 40
-     deceases per day due to COVID-19. This number remains in the result of 
+	In my department of Haute-Garonne, the graph shows a continuous increase
+     of hospitalization since beginning of November: the level was multiplied
+ 	 by 1.5 in a month.
+	In parallel, the number of deceases at the hospital remains increased in 
+	 the same period with a level multiplied by 3 in a month, reaching at last
+     40 deceases per day due to COVID-19. This number remains in the result of 
 	 these last months.
    
    
@@ -412,14 +415,14 @@ Question 5: Modelization
     and the amount of work in the hospitals despite the vaccination campaign.
 
    
-===========================================================================
+============================================================================
 
 FINDINGS
 
-About 6% of data were removed from the initial data set due to missing values.
- It concerns mainly first set of data at the beginning of the data collection.
- Indeed, method, measure, collection and presentation of data change in time
- before getting the current format of data.
+About 6% of data were removed from the initial data set due to missing 
+ values. It concerns mainly first set of data at the beginning of the data 
+ collection. Indeed, method, measure, collection and presentation of data 
+ change in time before getting the current format of data.
  Nevertheless, we benefit from a huge amount of valid data for the analysis.
  
 Computation of some rates raised the problem of division by 0. While taking 
@@ -435,24 +438,22 @@ Although testing several type of models, I kept the Linear Regression which
 I wonder if some other type of models could be more suitable in this case.
  
 
-===========================================================================
+============================================================================
 
 VERSION:
 
-ID: 1.2.0
+ID: 1.2.1
 
-In comparison with previous version 1.1.0, this version 1.2.0 brings following
- changes:
+In comparison with previous version 1.2.0, this version 1.2.1 brings 
+ following changes:
 
- - Database was updated
- 
- - The whole python code was review and modified. It is not implemented in a 
-   .py file rather than on a Jupyter Python file.
+ - Deliver the 
    
- - The post was totaly rewritten and illustrated.
+ - The post was updated to segregate my result section by mentioning the
+   question’s header.
 
 
-===========================================================================
+============================================================================
 
 INSTRUCTIONS:
 
@@ -463,17 +464,18 @@ INSTRUCTIONS:
 - Open a Command prompt or equivalent.
 - Change the directory to be in the workspace: cd ... workspace
 - then enter "python COVID19_France_process_data.py COVID19_France_data.csv"
-
+- When needed, open the notebook "COVID19_France_workunit.ipynb" in a python
+  code editor.
 			
-===========================================================================
+============================================================================
 
-PUBLIC RELEASE:
+PUBLIC RELEASE: UPDATE!
 
 You can find the published results here:
 https://medium.com/@laurent.jp.costa/rebound-of-covid-19-contamination-in-france-how-we-use-to-live-with-it-d180162048ba
 
 
-===========================================================================
+============================================================================
 
 ENVIRONMENT:
 
@@ -483,7 +485,7 @@ It may be necessary to install GTK for visualization.
  source code: https://gtk-win.sourceforge.io/home/index.php/Main/Downloads
 
 
-===========================================================================
+============================================================================
 
 REPOSITORY’S FILES:
 
@@ -492,27 +494,29 @@ File "requirements.txt" - librairies required for the proper execution of
  the programme.
 File “COVID19_France_data.csv” – data sheet file under csv format providing
  hospital data related to COVID 19 in France.
-File "COVID19_France_process_data.py" - Python script to process and analyze
- the data.
+File "COVID19_France_workunit.ipynb" is the analysis notebook.
 
 
-===========================================================================
+
+============================================================================
 
 DATA SOURCE:
 
 Hospital data: 
 
 - Name: Santé publique France
-- Licence: Open licence version 2.0 / ID 60190d00a7273a8100dd4d38 / 
+- Licence: Open licence version 2.0 / ID 60190d00a7273a8100dd4d38 /
   (https://www.etalab.gouv.fr/licence-ouverte-open-licence/)
 - Link: https://www.data.gouv.fr/fr/datasets/synthese-des-indicateurs-de-suivi-de-lepidemie-covid-19/
 - Update: 19-Dec-2022
 - Data extraction date: 20-Dec-2022
 - Request for reuse: Indicate the following link in my presentation of
-  results: https://www.data.gouv.fr/fr/datasets/synthese-des-indicateurs-de-suivi-de-lepidemie-covid-19/
+  results:
+  https://www.data.gouv.fr/fr/datasets/synthese-des-indicateurs-de-suivi-de-lepidemie-covid-19/
 
 
-===========================================================================
+============================================================================
+
 LEGAL:
 
 Reuse and exploitation of source data: Open licence (refer to DATA SOURCE).
