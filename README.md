@@ -442,15 +442,13 @@ I wonder if some other type of models could be more suitable in this case.
 
 VERSION:
 
-ID: 1.2.1
+ID: 1.2.2
 
-In comparison with previous version 1.2.0, this version 1.2.1 brings 
- following changes:
+In comparison with previous version, this version 1.2.2 brings 
+ following change:
 
- - Deliver the 
-   
- - The post was updated to segregate my result section by mentioning the
-   question’s header.
+ - Delivery of notebook script with no error
+ - Delivery of the python script with correction for getting the last date
 
 
 ============================================================================

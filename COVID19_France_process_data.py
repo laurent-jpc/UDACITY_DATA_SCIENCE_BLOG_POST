@@ -446,12 +446,9 @@ def get_values_at_last_date(df, category, deps):
         np.array(df[category])]
 
     # Run over every department
-    k = 0
-    m = True
-    cnt = 0
-    cond = False
     for dep in deps:
         time_ts = 0
+        id_max_date = 0
         # run along the rows of the dataframe
         for i, j in enumerate(lst[0]):
             # When I meet the selected department
@@ -460,7 +457,8 @@ def get_values_at_last_date(df, category, deps):
             #  we stored date and value of the category in values, relatively
             #  to every department.
             if (j == dep) and (time_ts < lst[2][i]):
-                id_max_date = i    
+                id_max_date = i
+                time_ts = lst[2][i]   
 
         # Use the last id_max_date stored to get values at the last date 
         #  for a department.
