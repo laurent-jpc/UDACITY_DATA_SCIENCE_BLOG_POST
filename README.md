@@ -1,11 +1,11 @@
-===========================================================================
+============================================================================
 
 PROJET/PURPOSE:
 
 UDACITY - DATA SCIENCE project: Write a Data Science Blog Post
 
 
-===========================================================================
+============================================================================
 
 TITLE:
 
@@ -13,7 +13,7 @@ Monitoring per department of the COVID-19 situation in France (16-Dec-2022)
 Rebound of contamination and hospitalization in the last month.
 
 
-===========================================================================
+============================================================================
 
 DESCRIPTION:
 
@@ -40,7 +40,7 @@ Business Understanding
    and increase communication related to safety precaution.
 
 
-===========================================================================
+============================================================================
 
 DATA UNDERSTANDING:
 	
@@ -160,8 +160,8 @@ According to Question 5, I would propose to build a prediction model would
  
 Data processing:
 
-Observations reported below have been extablished during preparation of the
- project while studying the data on Jupyter  with Python scripts. These scripts
+Observations reported below have been established during preparation of the
+ project while studying the data on Jupyter with Python scripts. These scripts
  where not implemented in the python script that aims at answering the questions.
 
  
@@ -249,7 +249,7 @@ At a time, it was considered to use 'dep' (departement -string-) values as
  'Modelization'), I decided to not use these dummies.
 
 
-===========================================================================
+============================================================================
 
 PREPARE DATA 
 
@@ -327,7 +327,7 @@ Other scikit's linear models give same results or worst, so I keep this one.
  So my model has a rather satisfactory score.
 
 
-===========================================================================
+============================================================================
 
 VISUALIZATION:
 
@@ -415,7 +415,7 @@ Question 5: Modelization
     and the amount of work in the hospitals despite the vaccination campaign.
 
    
-===========================================================================
+============================================================================
 
 FINDINGS
 
@@ -442,16 +442,16 @@ I wonder if some other type of models could be more suitable in this case.
 
 VERSION:
 
-ID: 1.2.2
+ID: 1.2.3
 
-In comparison with previous version, this version 1.2.2 brings 
- following change:
+In comparison with previous version, this new version brings following
+ change:
 
- - Delivery of notebook script with no error
- - Delivery of the python script with correction for getting the last date
+ - Delivery of notebook script updated with an introduction related to 
+    business and a more segmented notebook.
 
 
-===========================================================================
+============================================================================
 
 INSTRUCTIONS:
 
@@ -465,7 +465,7 @@ INSTRUCTIONS:
 - When needed, open the notebook "COVID19_France_workunit.ipynb" in a python
   code editor.
 			
-===========================================================================
+============================================================================
 
 PUBLIC RELEASE: UPDATE!
 
@@ -473,7 +473,7 @@ You can find the published results here:
 https://medium.com/@laurent.jp.costa/rebound-of-covid-19-contamination-in-france-how-we-use-to-live-with-it-d180162048ba
 
 
-===========================================================================
+============================================================================
 
 ENVIRONMENT:
 
@@ -483,7 +483,7 @@ It may be necessary to install GTK for visualization.
  source code: https://gtk-win.sourceforge.io/home/index.php/Main/Downloads
 
 
-===========================================================================
+============================================================================
 
 REPOSITORY’S FILES:
 
@@ -496,7 +496,7 @@ File "COVID19_France_workunit.ipynb" is the analysis notebook.
 
 
 
-===========================================================================
+============================================================================
 
 DATA SOURCE:
 
@@ -513,7 +513,7 @@ Hospital data:
   https://www.data.gouv.fr/fr/datasets/synthese-des-indicateurs-de-suivi-de-lepidemie-covid-19/
 
 
-===========================================================================
+============================================================================
 
 LEGAL:
 
